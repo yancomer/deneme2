@@ -9,6 +9,7 @@
   <thead>
     <tr>
       <th scope="col">Soru</th>
+      <th scope="col">Fotoğraf</th>
       <th scope="col">1.Cevap</th>
       <th scope="col">2.Cevap</th>
       <th scope="col">3.Cevap</th>
@@ -18,15 +19,19 @@
     </tr>
     @foreach($quiz->questions as $question )
     <tr>
-      <th>{{ $question->question }}</th>
-      <td>{{$question->image}}</td>
+      <td>{{ $question->question }}</td>
+       <td>
+        @if($question->image)
+          <a href="{{asset($question->image)}}" target="_blank" class="btn btn-sm btn-light">Görüntüle</a>
+          @endif
+        </td>
       <td>{{$question->answer1}}</td>
       <td>{{$question->answer2}}</td>
       <td>{{$question->answer3}}</td>
       <td>{{$question->answer4}}</td>
       <td class="text-success">{{substr($question->correct_answer,-1)}}. Cevap</td>
       <td>
-        <a href="{{route('quizzes.edit',$question->id)}}" class="btn btn-sm btn-pencil"><i class="fa fa-edit"></i></a>
+        <a href="{{route('questions.edit',[$quiz->id,$question->id])}}" class="btn btn-sm btn-pencil"><i class="fa fa-edit"></i></a>
         <a href="{{route('quizzes.destroy',$question->id)}}" class="btn btn-sm btn-danger"><i class="fa fa-times"></i></a>
 
       </td>

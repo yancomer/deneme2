@@ -12,7 +12,7 @@ class Quiz extends Model
     use HasFactory;
     use Sluggable;
 
-    protected $fillable=['title','description','finished_at','slug'];
+    protected $fillable=['title','description','status','finished_at','slug'];
     protected $dates=['finished_at'];
     public function getFinishedAttribute($date){
         return $date ? Carbon::parse($date) : null;

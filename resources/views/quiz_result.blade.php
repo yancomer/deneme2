@@ -9,8 +9,9 @@
     </div>
 
     @foreach($quiz->questions as $question)
-
-    @if($question->correct_answer == $question->my_answer->answer)        
+      <small>Katılımcılar %<strong>{{$question->true_percent}}</strong> oranında doğru cevap verdi</small>
+    <br>
+      @if($question->correct_answer == $question->my_answer->answer)        
     <i class="fa fa-check text-success"></i>
     @else
     <i class="fa fa-times text-danger"></i>

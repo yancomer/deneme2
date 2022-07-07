@@ -40,7 +40,19 @@
     <tr>
       <td>{{ $quiz->title }}</td>
       <td>{{ $quiz->questions_count }}</td>
-      <td>{{$quiz->status}}</td>
+      <td>
+        @switch($quiz->status)
+          @case('publish')
+            <td class="text-success">Aktif</span>
+          @break
+          @case('passive')
+            <td class="text-warning">Pasif</span>
+          @break
+          @case('draft')
+            <td class="text-danger">Taslak</span>
+          @break
+          @endswitch
+      </td>
       <td>
         <span title="{{$quiz->finished_at}}">
           {{$quiz->finished_at ? $quiz->finished_at->diffForHumans() : '-'}}</span>

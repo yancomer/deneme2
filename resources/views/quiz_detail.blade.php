@@ -9,40 +9,40 @@
           @if($quiz->my_rank)
           <li class="list-group-item d-flex justify-content-between align-items-center">
      Sıralama
-    <span class="badge badge-success badge-pill">#{{$quiz->my_rank}}</span>
+    <span class="text-success">#{{$quiz->my_rank}}</span>
   </li>
           @endif
         @if($quiz->my_result)
         <li class="list-group-item d-flex justify-content-between align-items-center">
      Puan
-    <span title="{{$quiz->finished_at}}" class="badge badge-primary badge-pill">{{$quiz->my_result->point}}</span>
+    <span title="{{$quiz->finished_at}}" class="text-success">{{$quiz->my_result->point}}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
      Doğru / Yanlış Sayısı
      <div class="float-right">
-    <span title="{{$quiz->finished_at}}" class="badge badge-success badge-pill">{{$quiz->my_result->correct}}Doğru</span>
-    <span title="{{$quiz->finished_at}}" class="badge badge-danger badge-pill">{{$quiz->my_result->wrong}}Yanlış</span>
+    <span title="{{$quiz->finished_at}}" class="text-success">{{$quiz->my_result->correct}}Doğru</span>
+    <span title="{{$quiz->finished_at}}" class="text-danger">{{$quiz->my_result->wrong}}Yanlış</span>
 </div>
   </li>
   @endif
             @if($quiz->finished_at)
         <li class="list-group-item d-flex justify-content-between align-items-center">
     Son Katılım Tarihi
-    <span title="{{$quiz->finished_at}}" class="badge badge-secondary badge-pill">{{$quiz->finished_at->diffForHumans()}}</span>
+    <span title="{{$quiz->finished_at}}" class="text-danger">{{$quiz->finished_at->diffForHumans()}}</span>
   </li>
   @endif
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Soru Sayısı
-    <span class="badge badge-secondary badge-pill">{{$quiz->questions_count}}</span>
+    <span class="text-dark">{{$quiz->questions_count}}</span>
   </li>
   @if($quiz->details)
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Katılımcı Sayısı
-    <span class="badge badge-warning badge-pill">{{ $quiz->details['join_count']}}</span>
+    <span class="text-dark">{{ $quiz->details['join_count']}}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Ortalama Puan
-    <span class="badge badge-light badge-pill">{{$quiz->details['average']}}</span>
+    <span class="text-danger">{{$quiz->details['average']}}</span>
   </li>
   @endif
 </ul>
@@ -57,7 +57,7 @@
       <img class="w-8 h-8 rounded-full" src="{{$result->user->profile_photo_url}}">
        
       <span @if(auth()->user()->id==$result->user_id) class="text-success" @endif>{{$result->user->name}}</span>
-      <span class="badge badge-success badge-pill">{{$result->point}}</span>
+      <span class="text-warning">{{$result->point}}</span>
     </li>
     @endforeach
 </ul>

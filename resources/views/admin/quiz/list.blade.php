@@ -43,13 +43,13 @@
       <td>
         @switch($quiz->status)
           @case('publish')
-            <td class="text-success">Aktif</span>
+            <span class="text-success">Aktif</span>
           @break
           @case('passive')
-            <td class="text-warning">Pasif</span>
+            <span class="text-warning">Pasif</span>
           @break
           @case('draft')
-            <td class="text-danger">Taslak</span>
+            <span class="text-danger">Taslak</span>
           @break
           @endswitch
       </td>
@@ -58,13 +58,10 @@
           {{$quiz->finished_at ? $quiz->finished_at->diffForHumans() : '-'}}</span>
         </td>
       <td>
-        <a href="{{route('quizzes.details',$quiz->id)}}" class="btn btn-sm btn-secondary">
-          <i class="fa fa-info-circle"></i>
-        </a>
+        <a href="{{route('quizzes.details',$quiz->id)}}" class="btn btn-sm btn-secondary"><i class="fa fa-info-circle"></i></a>
         <a href="{{route('questions.index',$quiz->id)}}" class="btn btn-sm btn-warning"><i class="fa fa-question"></i></a>
         <a href="{{route('quizzes.edit',$quiz->id)}}" class="btn btn-sm btn-pencil"><i class="fa fa-edit"></i></a>
         <a href="{{route('quizzes.destroy',$quiz->id)}}" class="btn btn-sm btn-danger"><i class="fa fa-times"></i></a>
-
       </td>
     </tr>
     @endforeach

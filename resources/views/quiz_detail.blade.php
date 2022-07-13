@@ -54,7 +54,7 @@
     @foreach($quiz->topTen as $result)  
     <li class="list-group-item d-flex justify-content-between align-items-center">
       <strong class="h6">{{$loop->iteration}}.</strong>
-      <img class="w-8 h-8 rounded-full" src="{{$result->user->profile_photo_url}}">
+     
        
       <span @if(auth()->user()->id==$result->user_id) class="text-success" @endif>{{$result->user->name}}</span>
       <span class="text-warning">{{$result->point}}</span>

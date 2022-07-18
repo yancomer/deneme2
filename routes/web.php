@@ -7,7 +7,7 @@ use App\Http\Controllers\Admin\QuestionController;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('yeni');
 });
 
 Route::group(['middleware'=> 'auth'], function(){

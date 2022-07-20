@@ -12,22 +12,22 @@
             @if($quiz->finished_at)
         <li class="list-group-item d-flex justify-content-between align-items-center">
     Son Katılım Tarihi
-    <span title="{{$quiz->finished_at}}" class="badge badge-secondary badge-pill">{{$quiz->finished_at->diffForHumans()}}</span>
+    <span title="{{$quiz->finished_at}}" class="text-primary">{{$quiz->finished_at->diffForHumans()}}</span>
   </li>
   @endif
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Soru Sayısı
-    <span class="badge badge-secondary badge-pill">{{$quiz->questions_count}}</span>
+    <span class="text-danger">{{$quiz->questions_count}}</span>
   </li>
   @if($quiz->details)
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Katılımcı Sayısı
-    <span class="badge badge-warning badge-pill">{{ $quiz->details['join_count']}}</span>
+    <span class="text-warning">{{ $quiz->details['join_count']}}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Ortalama Puan
-    <span class="badge badge-light badge-pill">{{$quiz->details['average']}}</span>
-  </li>
+    <span class="text-warning">{{$quiz->details['average']}}</span>
+  </li>text-success
   @endif
 </ul>
 @if(count($quiz->topTen)>0)
@@ -41,7 +41,7 @@
 
        
       <span @if(auth()->user()->id==$result->user_id) class="text-success" @endif>{{$result->user->name}}</span>
-      <span class="badge badge-success badge-pill">{{$result->point}}</span>
+      <span class="text-success">{{$result->point}}</span>
     </li>
     @endforeach
 </ul>
@@ -63,7 +63,7 @@
   <tbody>
     @foreach($quiz->results as $result)
     <tr>
-      <th>{{$result->user->name}}</th>
+      <td>{{$result->user->name}}</td>
       <td>{{$result->point}}</td>
       <td>{{$result->correct}}</td>
       <td>{{$result->wrong}}</td>

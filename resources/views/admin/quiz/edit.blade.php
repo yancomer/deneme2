@@ -6,6 +6,9 @@
             <form method="POST" action="{{route('quizzes.update',$quiz->id)}}">
                 @method('PUT')
                 @csrf
+                <div class="text-danger">
+                <label>Uyarı: Soru sayısı 4 ve daha fazla olmazsa Quiz Durumu "aktif" olarak güncellenemez.</label>
+                </div>
                 <div class="form-group">
                     <label>Quiz Başlığı</label>
                     <input type="text" name="title" class="form-control"value="{{$quiz->title}}">

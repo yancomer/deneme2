@@ -19,21 +19,21 @@
 </div>
 <div class="form-check">
   <input class="form-check-input" type="radio" name="{{$question->id}}" id="quiz{{$question->id}}2"
-   value="answer1" required>
+   value="answer2" required>
   <label class="form-check-label" for="quiz{{$question->id}}2">
     {{$question->answer2}}
   </label>
 </div>
 <div class="form-check">
   <input class="form-check-input" type="radio" name="{{$question->id}}" id="quiz{{$question->id}}3"
-   value="answer1" required>
+   value="answer3" required>
   <label class="form-check-label" for="quiz{{$question->id}}3">
     {{$question->answer3}}
   </label>
 </div>
 <div class="form-check">
   <input class="form-check-input" type="radio" name="{{$question->id}}" id="quiz{{$question->id}}4"
-   value="answer1" required>
+   value="answer4" required>
   <label class="form-check-label" for="quiz{{$question->id}}4">
     {{$question->answer4}}
   </label>

@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Quiz Uygulaması</title>
+    <title>Cosmo Quiz</title>
     <style>
     .footer{
     background-color: #404244;
@@ -34,8 +34,6 @@
                 <a href="{{ route('register') }}" class="btn btn-link btn-block btn--slide-fx-from-right">Kayıt Ol</a>
                         @endif
             </div>
-          </div>
-        </div>
       </nav>
       <!--Navbarın Bitşi-->
    <!--Slider-->
@@ -101,7 +99,9 @@
                 <img src="adam.png" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">KATKI</h5>
-                  <p class="card-text">Siz de tüm kullanıcılar için soru ekleyebilir ve ücretsiz test ekosistemimize katkıda bulunabilirsiniz.</p>
+                  <p class="card-text">Siz de bize ulaşarak tüm kullanıcılar için soru ekleyebilir ve ücretsiz test ekosistemimize katkıda bulunabilirsiniz.
+                    Mail adresimiz için<a href="mailto:cosmoem@gmail.com"> tıklayınız.</a> 
+                  </p>
                 </div>
               </div>
             </div>
